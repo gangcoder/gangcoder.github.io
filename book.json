@@ -1,0 +1,20 @@
+{
+    "title": "golang 服务端基础架构软件源码解析",
+    "author": "goodgang",
+    "description": "golang 服务端基础架构软件源码解析",
+    "language": "zh-hans",
+    "root": ".",
+    "plugins": [
+        "-sharing",
+        "-search",
+        "-lunr",
+        "todo",
+        "favicon@0.0.2"
+    ],
+    "pluginsConfig": {
+        "favicon": {
+            "shortcut": "images/favicon.ico",
+            "bookmark": "images/favicon.ico"
+        }
+    }
+}
