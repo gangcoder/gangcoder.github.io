@@ -1,0 +1,321 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=18;fontFamily=source code pro;" value="SpringApplication 初始化过程" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="220.5" x="20.0" y="20.0"/>
+    </mxCell>
+    <mxCell id="3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="1. SpringApplication 类" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="212.0" x="20.0" y="95.0"/>
+    </mxCell>
+    <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="SpringApplication (ResourceLoader resourceLoader, Class&amp;lt;?&amp;gt;... primarySources)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="654.5" x="20.0" y="145.0"/>
+    </mxCell>
+    <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="this.primarySources = new LinkedHashSet&amp;lt;&amp;gt;(Arrays.asList(primarySources));&lt;br/&gt;this.webApplicationType = WebApplicationType.deduceFromClasspath();" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="620.5" x="774.5" y="139.0"/>
+    </mxCell>
+    <mxCell edge="1" id="6" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="5" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="setInitializers((Collection) getSpringFactoriesInstances(ApplicationContextInitializer.class));" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="807.5" x="774.5" y="213.0"/>
+    </mxCell>
+    <mxCell edge="1" id="8" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="7" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="setListeners((Collection) getSpringFactoriesInstances(ApplicationListener.class));&lt;br/&gt;this.mainApplicationClass = deduceMainApplicationClass();" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="697.0" x="774.5" y="275.0"/>
+    </mxCell>
+    <mxCell edge="1" id="10" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="9" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Collection&amp;lt;T&amp;gt; getSpringFactoriesInstances (Class&amp;lt;T&amp;gt; type)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="484.5" x="1682.0" y="213.0"/>
+    </mxCell>
+    <mxCell edge="1" id="12" parent="1" source="7" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="11" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return getSpringFactoriesInstances(type, new Class&amp;lt;?&amp;gt;[] {});" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="510.0" x="2266.5" y="213.0"/>
+    </mxCell>
+    <mxCell edge="1" id="14" parent="1" source="11" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="13" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Collection&amp;lt;T&amp;gt; getSpringFactoriesInstances (Class&amp;lt;T&amp;gt; type, Class&amp;lt;?&amp;gt;[] parameterTypes, Object... args)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="850.0" x="2876.5" y="213.0"/>
+    </mxCell>
+    <mxCell edge="1" id="16" parent="1" source="13" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="15" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="ClassLoader classLoader = getClassLoader();&lt;br/&gt;Set&amp;lt;String&amp;gt; names = new LinkedHashSet&amp;lt;&amp;gt;(SpringFactoriesLoader.loadFactoryNames(type, classLoader));" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="841.5" x="3826.5" y="207.0"/>
+    </mxCell>
+    <mxCell edge="1" id="18" parent="1" source="15" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="17" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="List&amp;lt;T&amp;gt; instances = createSpringFactoriesInstances(type, parameterTypes, classLoader, args, names);&lt;br/&gt;AnnotationAwareOrderComparator.sort(instances);&lt;br/&gt;return instances;" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="841.5" x="3826.5" y="281.0"/>
+    </mxCell>
+    <mxCell edge="1" id="20" parent="1" source="15" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="19" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="List&amp;lt;T&amp;gt; createSpringFactoriesInstances (Class&amp;lt;T&amp;gt; type, Class&amp;lt;?&amp;gt;[] parameterTypes, ClassLoader classLoader, ...)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="943.5" x="20.0" y="405.0"/>
+    </mxCell>
+    <mxCell id="22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (String name : names) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Class&amp;lt;?&amp;gt; instanceClass = ClassUtils.forName(name, classLoader);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Constructor&amp;lt;?&amp;gt; constructor = instanceClass.getDeclaredConstructor(parameterTypes);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;T instance = (T) BeanUtils.instantiateClass(constructor, args);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;instances.add(instance);&lt;br/&gt;}&lt;br/&gt;return instances;" vertex="1">
+      <mxGeometry as="geometry" height="122.0" width="731.0" x="1063.5" y="369.0"/>
+    </mxCell>
+    <mxCell edge="1" id="23" parent="1" source="21" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="22" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="List&amp;lt;String&amp;gt; loadFactoryNames (Class&amp;lt;?&amp;gt; factoryType, @Nullable ClassLoader classLoader)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="739.5" x="20.0" y="541.0"/>
+    </mxCell>
+    <mxCell id="25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="String factoryTypeName = factoryType.getName();&lt;br/&gt;return loadSpringFactories(classLoader).getOrDefault(factoryTypeName, Collections.emptyList());" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="807.5" x="859.5" y="535.0"/>
+    </mxCell>
+    <mxCell edge="1" id="26" parent="1" source="24" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="25" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Map&amp;lt;String, List&amp;lt;String&amp;gt;&amp;gt; loadSpringFactories (@Nullable ClassLoader classLoader)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="688.5" x="1767.0" y="541.0"/>
+    </mxCell>
+    <mxCell edge="1" id="28" parent="1" source="25" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="27" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Enumeration&amp;lt;URL&amp;gt; urls = classLoader.getResources(FACTORIES_RESOURCE_LOCATION) ;&lt;br/&gt;result = new LinkedMultiValueMap&amp;lt;&amp;gt;();" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="671.5" x="2555.5" y="535.0"/>
+    </mxCell>
+    <mxCell edge="1" id="30" parent="1" source="27" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="29" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="while (urls.hasMoreElements()) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;URL url = urls.nextElement();&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;UrlResource resource = new UrlResource(url);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Properties properties = PropertiesLoaderUtils.loadProperties(resource);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;for (Map.Entry&amp;lt;?, ?&amp;gt; entry : properties.entrySet()) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;String factoryTypeName = ((String) entry.getKey()).trim();&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;for (String factoryImplementationName : StringUtils.commaDelimitedListToStringArray((String) entry.getValue())) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;result.add(factoryTypeName, factoryImplementationName.trim());&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}&lt;br/&gt;}&lt;br/&gt;return result;" vertex="1">
+      <mxGeometry as="geometry" height="182.0" width="1028.5" x="2555.5" y="609.0"/>
+    </mxCell>
+    <mxCell edge="1" id="32" parent="1" source="27" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="31" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="33" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="2. run 方法" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="101.5" x="20.0" y="816.0"/>
+    </mxCell>
+    <mxCell id="34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="ConfigurableApplicationContext run (String... args)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="433.5" x="20.0" y="866.0"/>
+    </mxCell>
+    <mxCell id="35" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="SpringApplicationRunListeners listeners = getRunListeners(args);&lt;br/&gt;listeners.starting();" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="544.0" x="553.5" y="860.0"/>
+    </mxCell>
+    <mxCell edge="1" id="36" parent="1" source="34" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="35" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="ConfigurableEnvironment environment = prepareEnvironment(listeners, applicationArguments);&lt;br/&gt;configureIgnoreBeanInfo(environment);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="765.0" x="553.5" y="934.0"/>
+    </mxCell>
+    <mxCell edge="1" id="38" parent="1" source="34" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="37" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="39" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="context = createApplicationContext();" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="314.5" x="553.5" y="1008.0"/>
+    </mxCell>
+    <mxCell edge="1" id="40" parent="1" source="34" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="39" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="prepareContext(context, environment, listeners, applicationArguments, printedBanner);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="722.5" x="553.5" y="1070.0"/>
+    </mxCell>
+    <mxCell edge="1" id="42" parent="1" source="34" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="41" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="43" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="refreshContext(context);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="204.0" x="553.5" y="1132.0"/>
+    </mxCell>
+    <mxCell edge="1" id="44" parent="1" source="34" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="43" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="45" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="callRunners(context, applicationArguments);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="365.5" x="553.5" y="1194.0"/>
+    </mxCell>
+    <mxCell edge="1" id="46" parent="1" source="34" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="45" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="47" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="SpringApplicationRunListeners getRunListeners (String[] args)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="518.5" x="1197.5" y="866.0"/>
+    </mxCell>
+    <mxCell edge="1" id="48" parent="1" source="35" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="47" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="49" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Class&amp;lt;?&amp;gt;[] types = new Class&amp;lt;?&amp;gt;[] { SpringApplication.class, String[].class };&lt;br/&gt;return new SpringApplicationRunListeners(logger, getSpringFactoriesInstances(SpringApplicationRunListener.class, types, this, args));" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="1130.5" x="1816.0" y="860.0"/>
+    </mxCell>
+    <mxCell edge="1" id="50" parent="1" source="47" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="49" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="51" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="SpringApplicationRunListeners (Log log, Collection&amp;lt;? extends SpringApplicationRunListener&amp;gt; listeners)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="858.5" x="1816.0" y="934.0"/>
+    </mxCell>
+    <mxCell edge="1" id="52" parent="1" source="47" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="51" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="53" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="this.log = log;&lt;br/&gt;this.listeners = new ArrayList&amp;lt;&amp;gt;(listeners);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="374.0" x="1816.0" y="996.0"/>
+    </mxCell>
+    <mxCell edge="1" id="54" parent="1" source="47" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="53" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="55" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void starting ()" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="161.0" x="20.0" y="1269.0"/>
+    </mxCell>
+    <mxCell id="56" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (SpringApplicationRunListener listener : this.listeners) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;listener.starting();&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="527.0" x="281.0" y="1257.0"/>
+    </mxCell>
+    <mxCell edge="1" id="57" parent="1" source="55" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="56" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="58" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void starting ()" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="161.0" x="908.0" y="1269.0"/>
+    </mxCell>
+    <mxCell edge="1" id="59" parent="1" source="56" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="58" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="60" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="this.initialMulticaster.multicastEvent(new ApplicationStartingEvent(this.application, this.args));" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="833.0" x="1169.0" y="1269.0"/>
+    </mxCell>
+    <mxCell edge="1" id="61" parent="1" source="58" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="60" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="62" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void multicastEvent (final ApplicationEvent event, @Nullable ResolvableType eventType)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="731.0" x="2102.0" y="1269.0"/>
+    </mxCell>
+    <mxCell edge="1" id="63" parent="1" source="60" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="62" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="64" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (ApplicationListener&amp;lt;?&amp;gt; listener : getApplicationListeners(event, type)) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;invokeListener(listener, event);&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="663.0" x="2933.0" y="1257.0"/>
+    </mxCell>
+    <mxCell edge="1" id="65" parent="1" source="62" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="64" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="66" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="ConfigurableEnvironment prepareEnvironment (SpringApplicationRunListeners listeners, ApplicationArguments applicationArguments)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="1079.5" x="20.0" y="1381.0"/>
+    </mxCell>
+    <mxCell id="67" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="ConfigurableEnvironment environment = getOrCreateEnvironment();" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="535.5" x="1199.5" y="1381.0"/>
+    </mxCell>
+    <mxCell edge="1" id="68" parent="1" source="66" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="67" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="69" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="listeners.environmentPrepared(environment);&lt;br/&gt;return environment;" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="365.5" x="1199.5" y="1443.0"/>
+    </mxCell>
+    <mxCell edge="1" id="70" parent="1" source="66" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="69" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="71" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void prepareContext (ConfigurableApplicationContext context, ConfigurableEnvironment environment, SpringApplicationRunListeners listeners, ...)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="1215.5" x="20.0" y="1555.0"/>
+    </mxCell>
+    <mxCell id="72" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="applyInitializers(context);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="229.5" x="1335.5" y="1555.0"/>
+    </mxCell>
+    <mxCell edge="1" id="73" parent="1" source="71" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="72" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="74" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Set&amp;lt;Object&amp;gt; sources = getAllSources();" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="323.0" x="1335.5" y="1617.0"/>
+    </mxCell>
+    <mxCell edge="1" id="75" parent="1" source="71" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="74" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="76" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="load(context, sources.toArray(new Object[0]));&lt;br/&gt;listeners.contextLoaded(context);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="391.0" x="1335.5" y="1679.0"/>
+    </mxCell>
+    <mxCell edge="1" id="77" parent="1" source="71" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="76" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="78" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void applyInitializers (ConfigurableApplicationContext context)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="535.5" x="1665.0" y="1555.0"/>
+    </mxCell>
+    <mxCell edge="1" id="79" parent="1" source="72" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="78" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="80" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (ApplicationContextInitializer initializer : getInitializers()) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;initializer.initialize(context);&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="586.5" x="2300.5" y="1543.0"/>
+    </mxCell>
+    <mxCell edge="1" id="81" parent="1" source="78" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="80" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="82" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Set&amp;lt;Object&amp;gt; getAllSources ()" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="238.0" x="20.0" y="1766.0"/>
+    </mxCell>
+    <mxCell id="83" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Set&amp;lt;Object&amp;gt; allSources = new LinkedHashSet&amp;lt;&amp;gt;();&lt;br/&gt;allSources.addAll(this.primarySources);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="399.5" x="358.0" y="1760.0"/>
+    </mxCell>
+    <mxCell edge="1" id="84" parent="1" source="82" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="83" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="85" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void load (ApplicationContext context, Object[] sources)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="476.0" x="20.0" y="1872.0"/>
+    </mxCell>
+    <mxCell id="86" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="BeanDefinitionLoader loader = createBeanDefinitionLoader(getBeanDefinitionRegistry(context), sources);&lt;br/&gt;loader.load();" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="867.0" x="596.0" y="1866.0"/>
+    </mxCell>
+    <mxCell edge="1" id="87" parent="1" source="85" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="86" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="88" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="int load (Class&amp;lt;?&amp;gt; source)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="221.0" x="1563.0" y="1872.0"/>
+    </mxCell>
+    <mxCell edge="1" id="89" parent="1" source="86" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="88" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="90" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="if (isComponent(source)) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;this.annotatedReader.register(source);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return 1;&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="86.0" width="357.0" x="1884.0" y="1854.0"/>
+    </mxCell>
+    <mxCell edge="1" id="91" parent="1" source="88" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="90" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="92" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="boolean isComponent (Class&amp;lt;?&amp;gt; type)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="297.5" x="2341.0" y="1872.0"/>
+    </mxCell>
+    <mxCell edge="1" id="93" parent="1" source="90" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="92" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="94" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="if (MergedAnnotations.from(type, SearchStrategy.TYPE_HIERARCHY).isPresent(Component.class)) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return true;&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="790.5" x="2738.5" y="1860.0"/>
+    </mxCell>
+    <mxCell edge="1" id="95" parent="1" source="92" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="94" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="96" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void callRunners (ApplicationContext context, ApplicationArguments args)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="612.0" x="20.0" y="1984.0"/>
+    </mxCell>
+    <mxCell id="97" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="List&amp;lt;Object&amp;gt; runners = new ArrayList&amp;lt;&amp;gt;();&lt;br/&gt;runners.addAll(context.getBeansOfType(ApplicationRunner.class).values());" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="620.5" x="732.0" y="1978.0"/>
+    </mxCell>
+    <mxCell edge="1" id="98" parent="1" source="96" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="97" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="99" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="runners.addAll(context.getBeansOfType(CommandLineRunner.class).values());" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="620.5" x="732.0" y="2052.0"/>
+    </mxCell>
+    <mxCell edge="1" id="100" parent="1" source="96" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="99" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="101" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="AnnotationAwareOrderComparator.sort(runners);&lt;br/&gt;for (Object runner : new LinkedHashSet&amp;lt;&amp;gt;(runners)) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if (runner instanceof ApplicationRunner) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;callRunner((ApplicationRunner) runner, args);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="110.0" width="450.5" x="732.0" y="2114.0"/>
+    </mxCell>
+    <mxCell edge="1" id="102" parent="1" source="96" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="101" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="103" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void callRunner (ApplicationRunner runner, ApplicationArguments args)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="586.5" x="1282.5" y="2144.0"/>
+    </mxCell>
+    <mxCell edge="1" id="104" parent="1" source="101" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="103" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="105" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="(runner).run(args);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="186.5" x="1969.0" y="2144.0"/>
+    </mxCell>
+    <mxCell edge="1" id="106" parent="1" source="103" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="105" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

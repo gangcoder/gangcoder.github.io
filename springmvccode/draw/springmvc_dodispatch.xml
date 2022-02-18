@@ -1,0 +1,294 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=18;fontFamily=source code pro;" value="DispatcherServlet 的逻辑处理" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="220.5" x="20.0" y="20.0"/>
+    </mxCell>
+    <mxCell id="3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="1. 请求上下文" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="93.0" x="20.0" y="95.0"/>
+    </mxCell>
+    <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void doGet (HttpServletRequest request, HttpServletResponse response)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="586.5" x="20.0" y="145.0"/>
+    </mxCell>
+    <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="processRequest(request, response);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="289.0" x="706.5" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="6" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="5" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void processRequest (HttpServletRequest request, HttpServletResponse response)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="663.0" x="1095.5" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="8" parent="1" source="5" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="7" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="doService(request, response);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="246.5" x="1858.5" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="10" parent="1" source="7" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="9" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void doService (HttpServletRequest request, HttpServletResponse response)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="620.5" x="2205.0" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="12" parent="1" source="9" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="11" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="doDispatch(request, response);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="255.0" x="2925.5" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="14" parent="1" source="11" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="13" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="15" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="2. 请求分发 doDispatch" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="178.0" x="20.0" y="220.0"/>
+    </mxCell>
+    <mxCell id="16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void doDispatch (HttpServletRequest request, HttpServletResponse response)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="629.0" x="20.0" y="270.0"/>
+    </mxCell>
+    <mxCell id="17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="mappedHandler = getHandler(processedRequest);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="382.5" x="749.0" y="270.0"/>
+    </mxCell>
+    <mxCell edge="1" id="18" parent="1" source="16" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="17" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="561.0" x="749.0" y="332.0"/>
+    </mxCell>
+    <mxCell edge="1" id="20" parent="1" source="16" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="19" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="if (!mappedHandler.applyPreHandle(processedRequest, response)) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return;&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="544.0" x="749.0" y="394.0"/>
+    </mxCell>
+    <mxCell edge="1" id="22" parent="1" source="16" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="21" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="mv = ha.handle(processedRequest, response, mappedHandler.getHandler());" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="603.5" x="749.0" y="480.0"/>
+    </mxCell>
+    <mxCell edge="1" id="24" parent="1" source="16" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="23" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="applyDefaultViewName(processedRequest, mv);&lt;br/&gt;mappedHandler.applyPostHandle(processedRequest, response, mv);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="527.0" x="749.0" y="542.0"/>
+    </mxCell>
+    <mxCell edge="1" id="26" parent="1" source="16" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="25" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="processDispatchResult(processedRequest, response, mappedHandler, mv, dispatchException);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="748.0" x="749.0" y="616.0"/>
+    </mxCell>
+    <mxCell edge="1" id="28" parent="1" source="16" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="27" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="HandlerExecutionChain getHandler (HttpServletRequest request)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="518.5" x="1231.5" y="270.0"/>
+    </mxCell>
+    <mxCell edge="1" id="30" parent="1" source="17" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="29" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (HandlerMapping mapping : this.handlerMappings) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;HandlerExecutionChain handler = mapping.getHandler(request);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if (handler != null) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return handler;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="110.0" width="544.0" x="1850.0" y="240.0"/>
+    </mxCell>
+    <mxCell edge="1" id="32" parent="1" source="29" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="31" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="HandlerExecutionChain getHandler (HttpServletRequest request)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="518.5" x="2494.0" y="270.0"/>
+    </mxCell>
+    <mxCell edge="1" id="34" parent="1" source="31" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="33" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="35" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Object handler = getHandlerInternal(request);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="382.5" x="3112.5" y="270.0"/>
+    </mxCell>
+    <mxCell edge="1" id="36" parent="1" source="33" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="35" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="HandlerExecutionChain executionChain = getHandlerExecutionChain(handler, request);&lt;br/&gt;return executionChain;" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="697.0" x="3112.5" y="332.0"/>
+    </mxCell>
+    <mxCell edge="1" id="38" parent="1" source="33" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="37" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="39" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="HandlerExecutionChain getHandlerExecutionChain (Object handler, HttpServletRequest request)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="773.5" x="3909.5" y="338.0"/>
+    </mxCell>
+    <mxCell edge="1" id="40" parent="1" source="37" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="39" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="String lookupPath = this.urlPathHelper.getLookupPathForRequest(request, LOOKUP_PATH);&lt;br/&gt;for (HandlerInterceptor interceptor : this.adaptedInterceptors) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if (interceptor instanceof MappedInterceptor) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;MappedInterceptor mappedInterceptor = (MappedInterceptor) interceptor;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if (mappedInterceptor.matches(lookupPath, this.pathMatcher)) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;chain.addInterceptor(mappedInterceptor.getInterceptor());&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="146.0" width="722.5" x="4783.0" y="290.0"/>
+    </mxCell>
+    <mxCell edge="1" id="42" parent="1" source="39" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="41" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="43" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="HandlerMethod getHandlerInternal (HttpServletRequest request)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="518.5" x="20.0" y="691.0"/>
+    </mxCell>
+    <mxCell id="44" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="String lookupPath = getUrlPathHelper().getLookupPathForRequest(request);&lt;br/&gt;HandlerMethod handlerMethod = lookupHandlerMethod(lookupPath, request);&lt;br/&gt;return (handlerMethod != null ? handlerMethod.createWithResolvedBean() : null);" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="671.5" x="638.5" y="679.0"/>
+    </mxCell>
+    <mxCell edge="1" id="45" parent="1" source="43" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="44" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="46" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="HandlerMethod lookupHandlerMethod (String lookupPath, HttpServletRequest request)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="688.5" x="1410.0" y="691.0"/>
+    </mxCell>
+    <mxCell edge="1" id="47" parent="1" source="44" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="46" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="List&amp;lt;T&amp;gt; directPathMatches = this.mappingRegistry.getMappingsByUrl(lookupPath);&lt;br/&gt;if (!matches.isEmpty()) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Match bestMatch = matches.get(0);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return bestMatch.handlerMethod;&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="98.0" width="663.0" x="2198.5" y="667.0"/>
+    </mxCell>
+    <mxCell edge="1" id="49" parent="1" source="46" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="48" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="50" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="HandlerAdapter getHandlerAdapter (Object handler)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="416.5" x="20.0" y="815.0"/>
+    </mxCell>
+    <mxCell id="51" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (HandlerAdapter adapter : this.handlerAdapters) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if (adapter.supports(handler)) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return adapter;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="98.0" width="450.5" x="536.5" y="791.0"/>
+    </mxCell>
+    <mxCell edge="1" id="52" parent="1" source="50" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="51" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="53" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="boolean supports (Object handler)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="280.5" x="1087.0" y="815.0"/>
+    </mxCell>
+    <mxCell edge="1" id="54" parent="1" source="51" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="53" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="55" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return (handler instanceof HandlerMethod &amp;amp;&amp;amp; supportsInternal((HandlerMethod) handler));" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="739.5" x="1467.5" y="815.0"/>
+    </mxCell>
+    <mxCell edge="1" id="56" parent="1" source="53" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="55" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="57" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="3. 请求处理" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="84.5" x="20.0" y="914.0"/>
+    </mxCell>
+    <mxCell id="58" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="ModelAndView handle (HttpServletRequest request, HttpServletResponse response, Object handler)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="799.0" x="20.0" y="964.0"/>
+    </mxCell>
+    <mxCell id="59" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return handleInternal(request, response, (HandlerMethod) handler);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="561.0" x="919.0" y="964.0"/>
+    </mxCell>
+    <mxCell edge="1" id="60" parent="1" source="58" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="59" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="61" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="ModelAndView handleInternal (HttpServletRequest request, HttpServletResponse response, HandlerMethod handlerMethod)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="977.5" x="1580.0" y="964.0"/>
+    </mxCell>
+    <mxCell edge="1" id="62" parent="1" source="59" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="61" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="63" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="mav = invokeHandlerMethod(request, response, handlerMethod);&lt;br/&gt;return mav;" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="510.0" x="2657.5" y="958.0"/>
+    </mxCell>
+    <mxCell edge="1" id="64" parent="1" source="61" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="63" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="65" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="ModelAndView invokeHandlerMethod (HttpServletRequest request, HttpServletResponse response, HandlerMethod handlerMethod)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="1020.0" x="3267.5" y="964.0"/>
+    </mxCell>
+    <mxCell edge="1" id="66" parent="1" source="63" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="65" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="67" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="invocableMethod.invokeAndHandle(webRequest, mavContainer);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="493.0" x="4387.5" y="964.0"/>
+    </mxCell>
+    <mxCell edge="1" id="68" parent="1" source="65" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="67" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="69" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return getModelAndView(mavContainer, modelFactory, webRequest);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="535.5" x="4387.5" y="1026.0"/>
+    </mxCell>
+    <mxCell edge="1" id="70" parent="1" source="65" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="69" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="71" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="ModelAndView getModelAndView (ModelAndViewContainer mavContainer, ModelFactory modelFactory, NativeWebRequest webRequest)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="1028.5" x="5023.0" y="1026.0"/>
+    </mxCell>
+    <mxCell edge="1" id="72" parent="1" source="69" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="71" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="73" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="ModelMap model = mavContainer.getModel();&lt;br/&gt;ModelAndView mav = new ModelAndView(mavContainer.getViewName(), model, mavContainer.getStatus());&lt;br/&gt;return mav;" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="824.5" x="6151.5" y="1014.0"/>
+    </mxCell>
+    <mxCell edge="1" id="74" parent="1" source="71" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="73" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="75" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void invokeAndHandle (ServletWebRequest webRequest, ModelAndViewContainer mavContainer, Object... providedArgs)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="943.5" x="20.0" y="1138.0"/>
+    </mxCell>
+    <mxCell id="76" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Object returnValue = invokeForRequest(webRequest, mavContainer, providedArgs);&lt;br/&gt;this.returnValueHandlers.handleReturnValue(returnValue, getReturnValueType(returnValue), mavContainer, webRequest);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="977.5" x="1063.5" y="1132.0"/>
+    </mxCell>
+    <mxCell edge="1" id="77" parent="1" source="75" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="76" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="78" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object invokeForRequest (NativeWebRequest request, @Nullable ModelAndViewContainer mavContainer, Object... providedArgs)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="1020.0" x="2141.0" y="1138.0"/>
+    </mxCell>
+    <mxCell edge="1" id="79" parent="1" source="76" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="78" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="80" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return doInvoke(args);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="212.0" x="3261.0" y="1138.0"/>
+    </mxCell>
+    <mxCell edge="1" id="81" parent="1" source="78" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="80" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="82" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="4. 视图渲染" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="84.5" x="20.0" y="1219.0"/>
+    </mxCell>
+    <mxCell id="83" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void processDispatchResult (HttpServletRequest request, HttpServletResponse response, @Nullable HandlerExecutionChain mappedHandler, ......)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="1190.0" x="20.0" y="1269.0"/>
+    </mxCell>
+    <mxCell id="84" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="render(mv, request, response);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="255.0" x="1310.0" y="1269.0"/>
+    </mxCell>
+    <mxCell edge="1" id="85" parent="1" source="83" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="84" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="86" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void render (ModelAndView mv, HttpServletRequest request, HttpServletResponse response)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="739.5" x="1665.0" y="1269.0"/>
+    </mxCell>
+    <mxCell edge="1" id="87" parent="1" source="84" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="86" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="88" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="String viewName = mv.getViewName();&lt;br/&gt;view = resolveViewName(viewName, mv.getModelInternal(), locale, request);&lt;br/&gt;view.render(mv.getModelInternal(), request, response);" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="620.5" x="2504.5" y="1257.0"/>
+    </mxCell>
+    <mxCell edge="1" id="89" parent="1" source="86" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="88" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="90" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void render (@Nullable Map&amp;lt;String, ?&amp;gt; model, HttpServletRequest request, HttpServletResponse response)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="867.0" x="3225.0" y="1269.0"/>
+    </mxCell>
+    <mxCell edge="1" id="91" parent="1" source="88" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="90" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="92" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="renderMergedOutputModel(mergedModel, getRequestToExpose(request), response);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="646.0" x="4192.0" y="1269.0"/>
+    </mxCell>
+    <mxCell edge="1" id="93" parent="1" source="90" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="92" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="94" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void renderMergedOutputModel (Map&amp;lt;String, Object&amp;gt; model, HttpServletRequest request, HttpServletResponse response)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="969.0" x="4938.0" y="1269.0"/>
+    </mxCell>
+    <mxCell edge="1" id="95" parent="1" source="92" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="94" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="96" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="RequestDispatcher rd = getRequestDispatcher(request, dispatcherPath);&lt;br/&gt;rd.forward(request, response);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="586.5" x="6007.0" y="1263.0"/>
+    </mxCell>
+    <mxCell edge="1" id="97" parent="1" source="94" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="96" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

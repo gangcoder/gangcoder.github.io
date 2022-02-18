@@ -1,0 +1,87 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=18;fontFamily=source code pro;" value="初始化 WebApplicationContext" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="212.5" x="20.0" y="20.0"/>
+    </mxCell>
+    <mxCell id="3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="1. ContextLoaderListener" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="204.0" x="20.0" y="95.0"/>
+    </mxCell>
+    <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void contextInitialized (ServletContextEvent event)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="433.5" x="20.0" y="145.0"/>
+    </mxCell>
+    <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="initWebApplicationContext(event.getServletContext());" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="450.5" x="553.5" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="6" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="5" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="WebApplicationContext initWebApplicationContext (ServletContext servletContext)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="671.5" x="1104.0" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="8" parent="1" source="5" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="7" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="this.context = createWebApplicationContext(servletContext);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="501.5" x="1875.5" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="10" parent="1" source="7" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="9" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="configureAndRefreshWebApplicationContext(cwac, servletContext);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="535.5" x="1875.5" y="207.0"/>
+    </mxCell>
+    <mxCell edge="1" id="12" parent="1" source="7" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="11" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, this.context);&lt;br/&gt;return this.context;" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="884.0" x="1875.5" y="269.0"/>
+    </mxCell>
+    <mxCell edge="1" id="14" parent="1" source="7" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="13" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="WebApplicationContext createWebApplicationContext (ServletContext sc)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="586.5" x="2477.0" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="16" parent="1" source="9" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="15" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Class&amp;lt;?&amp;gt; contextClass = determineContextClass(sc);&lt;br/&gt;return (ConfigurableWebApplicationContext) BeanUtils.instantiateClass(contextClass);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="714.0" x="3163.5" y="139.0"/>
+    </mxCell>
+    <mxCell edge="1" id="18" parent="1" source="15" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="17" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Class&amp;lt;?&amp;gt; determineContextClass (ServletContext servletContext)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="527.0" x="3977.5" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="20" parent="1" source="17" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="19" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="contextClassName = defaultStrategies.getProperty(WebApplicationContext.class.getName());&lt;br/&gt;return ClassUtils.forName(contextClassName, ContextLoader.class.getClassLoader());" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="748.0" x="4604.5" y="139.0"/>
+    </mxCell>
+    <mxCell edge="1" id="22" parent="1" source="19" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="21" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="23" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="2. refresh" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="110.0" x="20.0" y="356.0"/>
+    </mxCell>
+    <mxCell id="24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void configureAndRefreshWebApplicationContext (ConfigurableWebApplicationContext wac, ServletContext sc)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="884.0" x="20.0" y="406.0"/>
+    </mxCell>
+    <mxCell id="25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="wac.setServletContext(sc);&lt;br/&gt;String configLocationParam = sc.getInitParameter(CONFIG_LOCATION_PARAM);&lt;br/&gt;if (configLocationParam != null) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wac.setConfigLocation(configLocationParam);&lt;br/&gt;}&lt;br/&gt;customizeContext(sc, wac);" vertex="1">
+      <mxGeometry as="geometry" height="110.0" width="612.0" x="1004.0" y="376.0"/>
+    </mxCell>
+    <mxCell edge="1" id="26" parent="1" source="24" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="25" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="wac.refresh();" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="144.0" x="1004.0" y="498.0"/>
+    </mxCell>
+    <mxCell edge="1" id="28" parent="1" source="24" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="27" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

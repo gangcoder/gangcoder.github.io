@@ -1,0 +1,390 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=18;fontFamily=source code pro;" value="Spring AOP 代理实例化与调用" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="186.5" x="20.0" y="20.0"/>
+    </mxCell>
+    <mxCell id="3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="Bean 初始化后置处理" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="127.0" x="20.0" y="95.0"/>
+    </mxCell>
+    <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object initializeBean (String beanName, Object bean, @Nullable RootBeanDefinition mbd)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="731.0" x="20.0" y="145.0"/>
+    </mxCell>
+    <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="invokeAwareMethods(beanName, bean);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="297.5" x="851.0" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="6" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="5" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Object wrappedBean = bean;&lt;br/&gt;wrappedBean = applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="688.5" x="851.0" y="207.0"/>
+    </mxCell>
+    <mxCell edge="1" id="8" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="7" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="invokeInitMethods(beanName, wrappedBean, mbd);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="391.0" x="851.0" y="281.0"/>
+    </mxCell>
+    <mxCell edge="1" id="10" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="9" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="wrappedBean = applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);&lt;br/&gt;return wrappedBean;" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="680.0" x="851.0" y="343.0"/>
+    </mxCell>
+    <mxCell edge="1" id="12" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="11" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object applyBeanPostProcessorsAfterInitialization (Object existingBean, String beanName)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="748.0" x="1631.0" y="349.0"/>
+    </mxCell>
+    <mxCell edge="1" id="14" parent="1" source="11" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="13" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Object result = existingBean;&lt;br/&gt;for (BeanPostProcessor processor : getBeanPostProcessors()) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Object current = processor.postProcessAfterInitialization(result, beanName);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;result = current;&lt;br/&gt;}&lt;br/&gt;return result;" vertex="1">
+      <mxGeometry as="geometry" height="110.0" width="680.0" x="2479.0" y="319.0"/>
+    </mxCell>
+    <mxCell edge="1" id="16" parent="1" source="13" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="15" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="17" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="代理对象实例化" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="84.5" x="20.0" y="454.0"/>
+    </mxCell>
+    <mxCell id="18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object postProcessAfterInitialization (@Nullable Object bean, String beanName)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="663.0" x="20.0" y="504.0"/>
+    </mxCell>
+    <mxCell id="19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return wrapIfNecessary(bean, beanName, cacheKey);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="416.5" x="783.0" y="504.0"/>
+    </mxCell>
+    <mxCell edge="1" id="20" parent="1" source="18" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="19" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object wrapIfNecessary (Object bean, String beanName, Object cacheKey)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="595.0" x="1299.5" y="504.0"/>
+    </mxCell>
+    <mxCell edge="1" id="22" parent="1" source="19" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="21" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Object[] specificInterceptors = getAdvicesAndAdvisorsForBean(bean.getClass(), beanName, null);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="799.0" x="1994.5" y="504.0"/>
+    </mxCell>
+    <mxCell edge="1" id="24" parent="1" source="21" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="23" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="this.advisedBeans.put(cacheKey, Boolean.TRUE);&lt;br/&gt;Object proxy = createProxy(bean.getClass(), beanName, specificInterceptors, new SingletonTargetSource(bean));&lt;br/&gt;this.proxyTypes.put(cacheKey, proxy.getClass());&lt;br/&gt;return proxy;" vertex="1">
+      <mxGeometry as="geometry" height="86.0" width="926.5" x="1994.5" y="566.0"/>
+    </mxCell>
+    <mxCell edge="1" id="26" parent="1" source="21" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="25" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object[] getAdvicesAndAdvisorsForBean (Class&amp;lt;?&amp;gt; beanClass, String beanName, @Nullable TargetSource targetSource)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="952.0" x="2893.5" y="504.0"/>
+    </mxCell>
+    <mxCell edge="1" id="28" parent="1" source="23" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="27" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="List&amp;lt;Advisor&amp;gt; advisors = findEligibleAdvisors(beanClass, beanName);&lt;br/&gt;return advisors.toArray();" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="569.5" x="3945.5" y="498.0"/>
+    </mxCell>
+    <mxCell edge="1" id="30" parent="1" source="27" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="29" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="List&amp;lt;Advisor&amp;gt; findEligibleAdvisors (Class&amp;lt;?&amp;gt; beanClass, String beanName)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="612.0" x="4615.0" y="504.0"/>
+    </mxCell>
+    <mxCell edge="1" id="32" parent="1" source="29" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="31" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="List&amp;lt;Advisor&amp;gt; candidateAdvisors = findCandidateAdvisors();" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="493.0" x="5327.0" y="504.0"/>
+    </mxCell>
+    <mxCell edge="1" id="34" parent="1" source="31" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="33" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="35" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="List&amp;lt;Advisor&amp;gt; eligibleAdvisors = findAdvisorsThatCanApply(candidateAdvisors, beanClass, beanName);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="833.0" x="5327.0" y="566.0"/>
+    </mxCell>
+    <mxCell edge="1" id="36" parent="1" source="31" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="35" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="extendAdvisors(eligibleAdvisors);&lt;br/&gt;eligibleAdvisors = sortAdvisors(eligibleAdvisors);&lt;br/&gt;return eligibleAdvisors;" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="425.0" x="5327.0" y="628.0"/>
+    </mxCell>
+    <mxCell edge="1" id="38" parent="1" source="31" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="37" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="39" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="List&amp;lt;Advisor&amp;gt; findCandidateAdvisors ()" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="323.0" x="5920.0" y="504.0"/>
+    </mxCell>
+    <mxCell edge="1" id="40" parent="1" source="33" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="39" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return this.advisorRetrievalHelper.findAdvisorBeans();" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="459.0" x="6343.0" y="504.0"/>
+    </mxCell>
+    <mxCell edge="1" id="42" parent="1" source="39" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="41" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="43" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="List&amp;lt;Advisor&amp;gt; findAdvisorBeans ()" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="280.5" x="6902.0" y="504.0"/>
+    </mxCell>
+    <mxCell edge="1" id="44" parent="1" source="41" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="43" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="45" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="advisorNames = BeanFactoryUtils.beanNamesForTypeIncludingAncestors(this.beanFactory, Advisor.class, true, false);&lt;br/&gt;this.cachedAdvisorBeanNames = advisorNames;" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="960.5" x="7282.5" y="498.0"/>
+    </mxCell>
+    <mxCell edge="1" id="46" parent="1" source="43" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="45" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="47" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (String name : advisorNames) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;advisors.add(this.beanFactory.getBean(name, Advisor.class));&lt;br/&gt;}&lt;br/&gt;return advisors;" vertex="1">
+      <mxGeometry as="geometry" height="86.0" width="544.0" x="7282.5" y="572.0"/>
+    </mxCell>
+    <mxCell edge="1" id="48" parent="1" source="43" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="47" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="49" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="List&amp;lt;Advisor&amp;gt; findAdvisorsThatCanApply (List&amp;lt;Advisor&amp;gt; candidateAdvisors, Class&amp;lt;?&amp;gt; beanClass, String beanName)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="926.5" x="20.0" y="708.0"/>
+    </mxCell>
+    <mxCell id="50" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return AopUtils.findAdvisorsThatCanApply(candidateAdvisors, beanClass);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="603.5" x="1046.5" y="708.0"/>
+    </mxCell>
+    <mxCell edge="1" id="51" parent="1" source="49" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="50" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="52" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="List&amp;lt;Advisor&amp;gt; findAdvisorsThatCanApply (List&amp;lt;Advisor&amp;gt; candidateAdvisors, Class&amp;lt;?&amp;gt; clazz)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="748.0" x="1750.0" y="708.0"/>
+    </mxCell>
+    <mxCell edge="1" id="53" parent="1" source="50" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="52" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="54" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (Advisor candidate : candidateAdvisors) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;canApply(candidate, clazz, hasIntroductions)&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="408.0" x="2598.0" y="696.0"/>
+    </mxCell>
+    <mxCell edge="1" id="55" parent="1" source="52" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="54" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="56" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="boolean canApply (Pointcut pc, Class&amp;lt;?&amp;gt; targetClass, boolean hasIntroductions)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="663.0" x="3106.0" y="708.0"/>
+    </mxCell>
+    <mxCell edge="1" id="57" parent="1" source="54" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="56" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="58" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="classes.addAll(ClassUtils.getAllInterfacesForClassAsSet(targetClass));" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="595.0" x="3869.0" y="708.0"/>
+    </mxCell>
+    <mxCell edge="1" id="59" parent="1" source="56" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="58" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="60" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (Class&amp;lt;?&amp;gt; clazz : classes)&lt;br/&gt;Method[] methods = ReflectionUtils.getAllDeclaredMethods(clazz);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="544.0" x="3869.0" y="770.0"/>
+    </mxCell>
+    <mxCell edge="1" id="61" parent="1" source="56" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="60" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="62" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (Method method : methods)&lt;br/&gt;methodMatcher.matches(method, targetClass)" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="357.0" x="3869.0" y="844.0"/>
+    </mxCell>
+    <mxCell edge="1" id="63" parent="1" source="56" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="62" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="64" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object createProxy (Class&amp;lt;?&amp;gt; beanClass, @Nullable String beanName, @Nullable Object[] specificInterceptors, ...)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="952.0" x="20.0" y="956.0"/>
+    </mxCell>
+    <mxCell id="65" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="ProxyFactory proxyFactory = new ProxyFactory();&lt;br/&gt;proxyFactory.addAdvisors(advisors);&lt;br/&gt;proxyFactory.setTargetSource(targetSource);&lt;br/&gt;return proxyFactory.getProxy(getProxyClassLoader());" vertex="1">
+      <mxGeometry as="geometry" height="86.0" width="442.0" x="1072.0" y="938.0"/>
+    </mxCell>
+    <mxCell edge="1" id="66" parent="1" source="64" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="65" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="67" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object getProxy (@Nullable ClassLoader classLoader)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="433.5" x="1614.0" y="956.0"/>
+    </mxCell>
+    <mxCell edge="1" id="68" parent="1" source="65" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="67" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="69" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return createAopProxy().getProxy(classLoader);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="391.0" x="2147.5" y="956.0"/>
+    </mxCell>
+    <mxCell edge="1" id="70" parent="1" source="67" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="69" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="71" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="AopProxy createAopProxy ()" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="221.0" x="2638.5" y="956.0"/>
+    </mxCell>
+    <mxCell edge="1" id="72" parent="1" source="69" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="71" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="73" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return getAopProxyFactory().createAopProxy(this);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="416.5" x="2959.5" y="956.0"/>
+    </mxCell>
+    <mxCell edge="1" id="74" parent="1" source="71" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="73" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="75" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="AopProxy createAopProxy (AdvisedSupport config)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="399.5" x="3476.0" y="956.0"/>
+    </mxCell>
+    <mxCell edge="1" id="76" parent="1" source="73" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="75" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="77" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return new ObjenesisCglibAopProxy(config);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="357.0" x="3975.5" y="956.0"/>
+    </mxCell>
+    <mxCell edge="1" id="78" parent="1" source="75" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="77" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="79" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return new JdkDynamicAopProxy(config);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="323.0" x="3975.5" y="1018.0"/>
+    </mxCell>
+    <mxCell edge="1" id="80" parent="1" source="75" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="79" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="81" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="JDK 动态代理" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="93.0" x="20.0" y="1093.0"/>
+    </mxCell>
+    <mxCell id="82" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object getProxy (@Nullable ClassLoader classLoader)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="433.5" x="20.0" y="1143.0"/>
+    </mxCell>
+    <mxCell id="83" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Class&amp;lt;?&amp;gt;[] proxiedInterfaces = AopProxyUtils.completeProxiedInterfaces(this.advised, true);&lt;br/&gt;return Proxy.newProxyInstance(classLoader, proxiedInterfaces, this);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="773.5" x="553.5" y="1137.0"/>
+    </mxCell>
+    <mxCell edge="1" id="84" parent="1" source="82" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="83" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="85" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object invoke (Object proxy, Method method, Object[] args)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="493.0" x="20.0" y="1249.0"/>
+    </mxCell>
+    <mxCell id="86" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="List&amp;lt;Object&amp;gt; chain = this.advised.getInterceptorsAndDynamicInterceptionAdvice(method, targetClass);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="841.5" x="613.0" y="1249.0"/>
+    </mxCell>
+    <mxCell edge="1" id="87" parent="1" source="85" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="86" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="88" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="MethodInvocation invocation = new ReflectiveMethodInvocation(proxy, target, method, args, targetClass, chain);&lt;br/&gt;retVal = invocation.proceed();&lt;br/&gt;return retVal;" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="935.0" x="613.0" y="1311.0"/>
+    </mxCell>
+    <mxCell edge="1" id="89" parent="1" source="85" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="88" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="90" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="Cglib 代理" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="93.0" x="20.0" y="1410.0"/>
+    </mxCell>
+    <mxCell id="91" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object getProxy (@Nullable ClassLoader classLoader)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="433.5" x="20.0" y="1460.0"/>
+    </mxCell>
+    <mxCell id="92" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Enhancer enhancer = createEnhancer();&lt;br/&gt;enhancer.setSuperclass(proxySuperClass);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="340.0" x="553.5" y="1454.0"/>
+    </mxCell>
+    <mxCell edge="1" id="93" parent="1" source="91" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="92" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="94" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Callback[] callbacks = getCallbacks(rootClass);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="399.5" x="553.5" y="1528.0"/>
+    </mxCell>
+    <mxCell edge="1" id="95" parent="1" source="91" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="94" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="96" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="enhancer.setCallbackFilter(new ProxyCallbackFilter(this.advised.getConfigurationOnlyCopy(), this.fixedInterceptorMap, this.fixedInterceptorOffset));&lt;br/&gt;return createProxyClassAndInstance(enhancer, callbacks);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="1258.0" x="553.5" y="1590.0"/>
+    </mxCell>
+    <mxCell edge="1" id="97" parent="1" source="91" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="96" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="98" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object createProxyClassAndInstance (Enhancer enhancer, Callback[] callbacks)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="646.0" x="1911.5" y="1596.0"/>
+    </mxCell>
+    <mxCell edge="1" id="99" parent="1" source="96" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="98" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="100" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="enhancer.setCallbacks(callbacks);&lt;br/&gt;return (this.constructorArgs != null &amp;amp;&amp;amp; this.constructorArgTypes != null ? enhancer.create(this.constructorArgTypes, this.constructorArgs) : enhancer.create());" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="1360.0" x="2657.5" y="1590.0"/>
+    </mxCell>
+    <mxCell edge="1" id="101" parent="1" source="98" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="100" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="102" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Callback[] getCallbacks (Class&amp;lt;?&amp;gt; rootClass)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="374.0" x="20.0" y="1702.0"/>
+    </mxCell>
+    <mxCell id="103" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="targetInterceptor = new DynamicUnadvisedInterceptor(this.advised.getTargetSource()));" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="722.5" x="494.0" y="1702.0"/>
+    </mxCell>
+    <mxCell edge="1" id="104" parent="1" source="102" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="103" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="105" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Callback[] mainCallbacks = new Callback[] { aopInterceptor, targetInterceptor, ... };&lt;br/&gt;callbacks = mainCallbacks;&lt;br/&gt;return callbacks;" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="722.5" x="494.0" y="1764.0"/>
+    </mxCell>
+    <mxCell edge="1" id="106" parent="1" source="102" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="105" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="107" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object intercept (Object proxy, Method method, Object[] args, ...)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="561.0" x="20.0" y="1888.0"/>
+    </mxCell>
+    <mxCell id="108" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="List&amp;lt;Object&amp;gt; chain = this.advised.getInterceptorsAndDynamicInterceptionAdvice(method, targetClass);&lt;br/&gt;retVal = new CglibMethodInvocation(proxy, target, method, args, targetClass, chain, methodProxy).proceed();&lt;br/&gt;return retVal;" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="909.5" x="681.0" y="1876.0"/>
+    </mxCell>
+    <mxCell edge="1" id="109" parent="1" source="107" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="108" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="110" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object proceed ()" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="169.5" x="1690.5" y="1888.0"/>
+    </mxCell>
+    <mxCell edge="1" id="111" parent="1" source="108" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="110" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="112" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return super.proceed();" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="220.5" x="1960.0" y="1888.0"/>
+    </mxCell>
+    <mxCell edge="1" id="113" parent="1" source="110" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="112" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="114" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="List&amp;lt;Object&amp;gt; getInterceptorsAndDynamicInterceptionAdvice (Method method, @Nullable Class&amp;lt;?&amp;gt; targetClass)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="884.0" x="20.0" y="1988.0"/>
+    </mxCell>
+    <mxCell id="115" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="cached = this.advisorChainFactory.getInterceptorsAndDynamicInterceptionAdvice(this, method, targetClass);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="892.5" x="1004.0" y="1988.0"/>
+    </mxCell>
+    <mxCell edge="1" id="116" parent="1" source="114" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="115" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="117" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object proceed ()" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="169.5" x="20.0" y="2088.0"/>
+    </mxCell>
+    <mxCell id="118" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="if (this.currentInterceptorIndex == this.interceptorsAndDynamicMethodMatchers.size() - 1) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return invokeJoinpoint();&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="773.5" x="289.5" y="2076.0"/>
+    </mxCell>
+    <mxCell edge="1" id="119" parent="1" source="117" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="118" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="120" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Object interceptorOrInterceptionAdvice = this.interceptorsAndDynamicMethodMatchers.get(++this.currentInterceptorIndex);&lt;br/&gt;return ((MethodInterceptor) interceptorOrInterceptionAdvice).invoke(this);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="1011.5" x="289.5" y="2162.0"/>
+    </mxCell>
+    <mxCell edge="1" id="121" parent="1" source="117" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="120" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="122" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object invoke (MethodInvocation mi)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="297.5" x="1163.0" y="2088.0"/>
+    </mxCell>
+    <mxCell edge="1" id="123" parent="1" source="118" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="122" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="124" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="try {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return mi.proceed();&lt;br/&gt;} finally {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;invokeAdviceMethod(getJoinPointMatch(), null, null);&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="98.0" width="476.0" x="1560.5" y="2064.0"/>
+    </mxCell>
+    <mxCell edge="1" id="125" parent="1" source="122" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="124" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="126" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object invoke (MethodInvocation mi)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="297.5" x="2136.5" y="2088.0"/>
+    </mxCell>
+    <mxCell edge="1" id="127" parent="1" source="124" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="126" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="128" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="this.advice.before(mi.getMethod(), mi.getArguments(), mi.getThis());&lt;br/&gt;return mi.proceed();" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="578.0" x="2534.0" y="2082.0"/>
+    </mxCell>
+    <mxCell edge="1" id="129" parent="1" source="126" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="128" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

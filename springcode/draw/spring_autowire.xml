@@ -1,0 +1,105 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=18;fontFamily=source code pro;" value="自动装配实现" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="76.0" x="20.0" y="20.0"/>
+    </mxCell>
+    <mxCell id="3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="1. byName 源码实现" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="144.0" x="20.0" y="95.0"/>
+    </mxCell>
+    <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void populateBean (String beanName, RootBeanDefinition mbd, @Nullable BeanWrapper bw)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="722.5" x="20.0" y="145.0"/>
+    </mxCell>
+    <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="if (resolvedAutowireMode == AUTOWIRE_BY_NAME) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;autowireByName(beanName, mbd, bw, newPvs);&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="399.5" x="842.5" y="133.0"/>
+    </mxCell>
+    <mxCell edge="1" id="6" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="5" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="if (resolvedAutowireMode == AUTOWIRE_BY_TYPE) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;autowireByType(beanName, mbd, bw, newPvs);&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="399.5" x="842.5" y="219.0"/>
+    </mxCell>
+    <mxCell edge="1" id="8" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="7" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void autowireByName (String beanName, AbstractBeanDefinition mbd, BeanWrapper bw, ...)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="731.0" x="20.0" y="343.0"/>
+    </mxCell>
+    <mxCell id="10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="String[] propertyNames = unsatisfiedNonSimpleProperties(mbd, bw);&lt;br/&gt;for (String propertyName : propertyNames)" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="552.5" x="851.0" y="337.0"/>
+    </mxCell>
+    <mxCell edge="1" id="11" parent="1" source="9" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="10" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="if (containsBean(propertyName)) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Object bean = getBean(propertyName);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;pvs.add(propertyName, bean);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;registerDependentBean(propertyName, beanName);&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="98.0" width="425.0" x="851.0" y="411.0"/>
+    </mxCell>
+    <mxCell edge="1" id="13" parent="1" source="9" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="12" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="14" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="2. byType 源码实现" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="144.0" x="20.0" y="534.0"/>
+    </mxCell>
+    <mxCell id="15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void autowireByType (String beanName, AbstractBeanDefinition mbd, BeanWrapper bw, ...)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="731.0" x="20.0" y="584.0"/>
+    </mxCell>
+    <mxCell id="16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (String propertyName : propertyNames) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Object autowiredArgument = resolveDependency(desc, beanName, autowiredBeanNames, converter);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if (autowiredArgument != null) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;pvs.add(propertyName, autowiredArgument);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="110.0" width="816.0" x="851.0" y="554.0"/>
+    </mxCell>
+    <mxCell edge="1" id="17" parent="1" source="15" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="16" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object resolveDependency (DependencyDescriptor descriptor, @Nullable String requestingBeanName, @Nullable Set&amp;lt;String&amp;gt; autowiredBeanNames, ...)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="1207.0" x="20.0" y="714.0"/>
+    </mxCell>
+    <mxCell id="19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="result = doResolveDependency(descriptor, requestingBeanName, autowiredBeanNames, typeConverter);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="816.0" x="1327.0" y="714.0"/>
+    </mxCell>
+    <mxCell edge="1" id="20" parent="1" source="18" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="19" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object doResolveDependency (DependencyDescriptor descriptor, @Nullable String beanName, @Nullable Set&amp;lt;String&amp;gt; autowiredBeanNames, ...)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="1139.0" x="20.0" y="814.0"/>
+    </mxCell>
+    <mxCell id="22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Map&amp;lt;String, Object&amp;gt; matchingBeans = findAutowireCandidates(beanName, type, descriptor);&lt;br/&gt;Map.Entry&amp;lt;String, Object&amp;gt; entry = matchingBeans.entrySet().iterator().next();&lt;br/&gt;instanceCandidate = entry.getValue();&lt;br/&gt;Object result = instanceCandidate;&lt;br/&gt;return result;" vertex="1">
+      <mxGeometry as="geometry" height="98.0" width="739.5" x="1259.0" y="790.0"/>
+    </mxCell>
+    <mxCell edge="1" id="23" parent="1" source="21" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="22" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Map&amp;lt;String, Object&amp;gt; findAutowireCandidates (@Nullable String beanName, Class&amp;lt;?&amp;gt; requiredType, DependencyDescriptor descriptor)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="1071.0" x="2098.5" y="814.0"/>
+    </mxCell>
+    <mxCell edge="1" id="25" parent="1" source="22" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="24" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="String[] candidateNames = BeanFactoryUtils.beanNamesForTypeIncludingAncestors(this, requiredType, true, descriptor.isEager());&lt;br/&gt;for (String candidate : candidateNames) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if (!isSelfReference(beanName, candidate) &amp;amp;&amp;amp; isAutowireCandidate(candidate, descriptor)) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;addCandidateEntry(result, candidate, descriptor, requiredType);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="110.0" width="1071.0" x="3269.5" y="784.0"/>
+    </mxCell>
+    <mxCell edge="1" id="27" parent="1" source="24" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="26" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void addCandidateEntry (Map&amp;lt;String, Object&amp;gt; candidates, String candidateName, DependencyDescriptor descriptor, ...)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="977.5" x="20.0" y="944.0"/>
+    </mxCell>
+    <mxCell id="29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Object beanInstance = descriptor.resolveCandidate(candidateName, requiredType, this);&lt;br/&gt;candidates.put(candidateName, (beanInstance instanceof NullBean ? null : beanInstance));" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="748.0" x="1097.5" y="938.0"/>
+    </mxCell>
+    <mxCell edge="1" id="30" parent="1" source="28" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="29" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Object resolveCandidate (String beanName, Class&amp;lt;?&amp;gt; requiredType, BeanFactory beanFactory)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="756.5" x="1945.5" y="944.0"/>
+    </mxCell>
+    <mxCell edge="1" id="32" parent="1" source="29" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="31" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return beanFactory.getBean(beanName);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="314.5" x="2802.0" y="944.0"/>
+    </mxCell>
+    <mxCell edge="1" id="34" parent="1" source="31" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="33" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

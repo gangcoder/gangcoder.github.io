@@ -1,0 +1,165 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=18;fontFamily=source code pro;" value="包扫描注解 component-scan" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="195.0" x="20.0" y="20.0"/>
+    </mxCell>
+    <mxCell id="3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="1. 注册解析器" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="93.0" x="20.0" y="95.0"/>
+    </mxCell>
+    <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="BeanDefinition parseCustomElement (Element ele, @Nullable BeanDefinition containingBd)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="731.0" x="20.0" y="145.0"/>
+    </mxCell>
+    <mxCell id="5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="String namespaceUri = getNamespaceURI(ele);&lt;br/&gt;NamespaceHandler handler = this.readerContext.getNamespaceHandlerResolver().resolve(namespaceUri);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="833.0" x="851.0" y="139.0"/>
+    </mxCell>
+    <mxCell edge="1" id="6" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="5" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return handler.parse(ele, new ParserContext(this.readerContext, this, containingBd));" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="722.5" x="851.0" y="213.0"/>
+    </mxCell>
+    <mxCell edge="1" id="8" parent="1" source="4" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="7" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="NamespaceHandler resolve (String namespaceUri)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="391.0" x="1784.0" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="10" parent="1" source="5" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="9" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="NamespaceHandler namespaceHandler = (NamespaceHandler) BeanUtils.instantiateClass(handlerClass);&lt;br/&gt;namespaceHandler.init();" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="816.0" x="2275.0" y="139.0"/>
+    </mxCell>
+    <mxCell edge="1" id="12" parent="1" source="9" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="11" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return namespaceHandler;" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="204.0" x="2275.0" y="213.0"/>
+    </mxCell>
+    <mxCell edge="1" id="14" parent="1" source="9" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="13" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void init ()" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="127.0" x="3191.0" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="16" parent="1" source="11" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="15" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="registerBeanDefinitionParser(&quot;component-scan&quot;, new ComponentScanBeanDefinitionParser());" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="748.0" x="3418.0" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="18" parent="1" source="15" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="17" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="void registerBeanDefinitionParser (String elementName, BeanDefinitionParser parser)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="705.5" x="4266.0" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="20" parent="1" source="17" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="19" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="this.parsers.put(elementName, parser);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="323.0" x="5071.5" y="145.0"/>
+    </mxCell>
+    <mxCell edge="1" id="22" parent="1" source="19" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="21" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="23" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="2. 自定义标签解析" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="110.0" x="20.0" y="288.0"/>
+    </mxCell>
+    <mxCell id="24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="BeanDefinition parse (Element element, ParserContext parserContext)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="569.5" x="20.0" y="338.0"/>
+    </mxCell>
+    <mxCell id="25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="BeanDefinitionParser parser = findParserForElement(element, parserContext);&lt;br/&gt;return (parser != null ? parser.parse(element, parserContext) : null);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="637.5" x="689.5" y="332.0"/>
+    </mxCell>
+    <mxCell edge="1" id="26" parent="1" source="24" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="25" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="BeanDefinition parse (Element element, ParserContext parserContext)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="569.5" x="1427.0" y="338.0"/>
+    </mxCell>
+    <mxCell edge="1" id="28" parent="1" source="25" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="27" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="String basePackage = element.getAttribute(BASE_PACKAGE_ATTRIBUTE);&lt;br/&gt;basePackage = parserContext.getReaderContext().getEnvironment().resolvePlaceholders(basePackage);" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="824.5" x="2096.5" y="332.0"/>
+    </mxCell>
+    <mxCell edge="1" id="30" parent="1" source="27" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="29" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="ClassPathBeanDefinitionScanner scanner = configureScanner(parserContext, element);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="697.0" x="2096.5" y="406.0"/>
+    </mxCell>
+    <mxCell edge="1" id="32" parent="1" source="27" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="31" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Set&amp;lt;BeanDefinitionHolder&amp;gt; beanDefinitions = scanner.doScan(basePackages);&lt;br/&gt;return null;" vertex="1">
+      <mxGeometry as="geometry" height="62.0" width="620.5" x="2096.5" y="468.0"/>
+    </mxCell>
+    <mxCell edge="1" id="34" parent="1" source="27" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="33" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="35" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="ClassPathBeanDefinitionScanner configureScanner (ParserContext parserContext, Element element)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="799.0" x="2893.5" y="406.0"/>
+    </mxCell>
+    <mxCell edge="1" id="36" parent="1" source="31" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="35" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="ClassPathBeanDefinitionScanner scanner = createScanner(parserContext.getReaderContext(), useDefaultFilters);&lt;br/&gt;parseTypeFilters(element, scanner, parserContext);&lt;br/&gt;return scanner;" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="918.0" x="3792.5" y="394.0"/>
+    </mxCell>
+    <mxCell edge="1" id="38" parent="1" source="35" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="37" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="39" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=13;fontFamily=source code pro;" value="3. 扫描逻辑实现" vertex="1">
+      <mxGeometry as="geometry" height="25.0" width="101.5" x="20.0" y="555.0"/>
+    </mxCell>
+    <mxCell id="40" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Set&amp;lt;BeanDefinitionHolder&amp;gt; doScan (String... basePackages)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="484.5" x="20.0" y="605.0"/>
+    </mxCell>
+    <mxCell id="41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (String basePackage : basePackages) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Set&amp;lt;BeanDefinition&amp;gt; candidates = findCandidateComponents(basePackage);&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="74.0" width="629.0" x="604.5" y="593.0"/>
+    </mxCell>
+    <mxCell edge="1" id="42" parent="1" source="40" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="41" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="43" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (BeanDefinition candidate : candidates) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;String beanName = this.beanNameGenerator.generateBeanName(candidate, this.registry);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BeanDefinitionHolder definitionHolder = new BeanDefinitionHolder(candidate, beanName);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;registerBeanDefinition(definitionHolder, this.registry);&lt;br/&gt;}" vertex="1">
+      <mxGeometry as="geometry" height="98.0" width="765.0" x="604.5" y="679.0"/>
+    </mxCell>
+    <mxCell edge="1" id="44" parent="1" source="40" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="43" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="45" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Set&amp;lt;BeanDefinition&amp;gt; findCandidateComponents (String basePackage)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="544.0" x="1333.5" y="605.0"/>
+    </mxCell>
+    <mxCell edge="1" id="46" parent="1" source="41" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="45" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="47" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="return scanCandidateComponents(basePackage);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="374.0" x="1977.5" y="605.0"/>
+    </mxCell>
+    <mxCell edge="1" id="48" parent="1" source="45" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="47" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="49" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;strokeColor=none;fillColor=#DAE8FC;" value="Set&amp;lt;BeanDefinition&amp;gt; scanCandidateComponents (String basePackage)" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="544.0" x="2451.5" y="605.0"/>
+    </mxCell>
+    <mxCell edge="1" id="50" parent="1" source="47" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#019ED5;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" target="49" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="51" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="Resource[] resources = getResourcePatternResolver().getResources(packageSearchPath);" vertex="1">
+      <mxGeometry as="geometry" height="50.0" width="714.0" x="3095.5" y="605.0"/>
+    </mxCell>
+    <mxCell edge="1" id="52" parent="1" source="49" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="51" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+    <mxCell id="53" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=source code pro;fontSize=13;align=left;spacingLeft=5;arcSize=12;absoluteArcSize=1;" value="for (Resource resource : resources) {&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;MetadataReader metadataReader = getMetadataReaderFactory().getMetadataReader(resource);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ScannedGenericBeanDefinition sbd = new ScannedGenericBeanDefinition(metadataReader);&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;candidates.add(sbd);&lt;br/&gt;}&lt;br/&gt;return candidates;" vertex="1">
+      <mxGeometry as="geometry" height="110.0" width="773.5" x="3095.5" y="667.0"/>
+    </mxCell>
+    <mxCell edge="1" id="54" parent="1" source="49" style="edgeStyle=entityRelationEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FE4365;fontFamily=source code pro;fontSize=13;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="53" value="">
+      <mxGeometry as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>
