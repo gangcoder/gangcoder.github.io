@@ -6,6 +6,8 @@ category: java100, spring, springcode
 
 # XML 应用上下文启动实现
 
+![](draw/spring_xml_application_context.svg)
+
 ## 1. 创建应用
 
 ClassPathXmlApplicationContext 中触发刷新整个Spring上下文信息。

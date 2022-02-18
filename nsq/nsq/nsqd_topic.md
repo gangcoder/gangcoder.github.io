@@ -1,8 +1,8 @@
----
+<!-- ---
 title: golang topic
 date: 2018-08-20 21:22:33
 category: language, go, nsq
----
+--- -->
 
 golang topic
 

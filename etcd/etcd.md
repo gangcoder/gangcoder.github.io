@@ -14,17 +14,16 @@ category: src, etcd
 
 ### 内容
 
-- [etcd 指南](./etcd_guide.md)
-- [etcd 安装与启动](./etcd_startup.md)
-- [etcd 代码目录结构](./etcd_code.md)
-- [etcd 结构图](./etcd_structure.md)
-- [etcdctl 入口函数](./etcd_etcdctl.md)
-- [etcdctl get 子命令](./etcd_etcdctl_get.md)
-- [etcdctl put 子命令](./etcd_etcdctl_put.md)
-- [etcd 服务入口函数](./etcd_etcd.md)
-- [etcd proxy 代理实现](./etcd_proxy.md)
-- [etcd 键值对grpc 服务](./etcd_kvserver.md)
-
+* [etcd 指南](/etcd/etcd_guide.md)
+* [etcd 安装与启动](/etcd/etcd_startup.md)
+* [etcd 代码目录结构](/etcd/etcd_code.md)
+* [etcd 结构图](/etcd/etcd_structure.md)
+* [etcdctl 入口函数](/etcd/etcd_etcdctl.md)
+* [etcdctl get 子命令](/etcd/etcd_etcdctl_get.md)
+* [etcdctl put 子命令](/etcd/etcd_etcdctl_put.md)
+* [etcd 服务启动实现](/etcd/etcd_etcd.md)
+* [etcd proxy 代理实现](/etcd/etcd_proxy.md)
+* [etcd 键值对grpc 服务](/etcd/etcd_kvserver.md)
 
 ### 文档
 

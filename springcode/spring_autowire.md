@@ -6,6 +6,8 @@ category: java100, spring, springcode
 
 # 自动装配实现
 
+![](draw/spring_autowire.drawio.svg)
+
 ## 1. byName 源码实现
 
 

@@ -1,8 +1,8 @@
----
+<!-- ---
 title: minio 对象存储
 date: 2018-06-12 14:06:09
 category: database, storage, minio
----
+--- -->
 
 minio 对象存储
 
@@ -47,6 +47,12 @@ minio
 第三层: fs-v1 / xl-v1 实现
 第四层: cache 实现
 
+## 目录
+
+* [MinIO 指南](/minio/minio_guide.md)
+* [MinIO 安装与启动](/minio/minio_startup.md)
+* [MinIO 代码与目录结构](/minio/minio_code.md)
+* [MinIO 结构图](/minio/minio_structure.md)
 
 ## 文稿内容
 

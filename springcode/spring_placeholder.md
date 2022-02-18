@@ -6,6 +6,8 @@ category: java100, spring, springcode
 
 # 占位符替换实现
 
+![](draw/spring_placeholder.drawio.svg)
+
 ## 示例代码
 
 ```

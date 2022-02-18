@@ -6,6 +6,7 @@ category: java100, springmvc, code
 
 # DispatcherServlet 的逻辑处理
 
+![](draw/springmvc_dodispatch.svg)
 
 ## 1. 请求上下文
 

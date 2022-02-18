@@ -6,18 +6,17 @@ category: showcode, micro, go-micro
 
 # go micro
 
-* [微服务框架](micro/go-micro/go-micro.md)
-  * [创建微服务实现](micro/go-micro/go-micro_start.md)
-  * [grpc 服务实现](micro/go-micro/go-micro_services_grpc.md)
-  * [服务注册与发现实现](micro/go-micro/go-micro_registry.md)
-  * [客户端grpc 实现](micro/go-micro/go-micro_client_grpc.md)
-  * [客户端服务发现与节点选择实现](micro/go-micro/go-micro_client_registry.md)
-  * [Go-Micro 客户端连接池实现](micro/go-micro/go-micro_client_pool.md)
-  * [事件订阅与消费实现](micro/go-micro/go-micro_broker.md)
-  * micro 工具实现
-    * profile
-    * scrpits
-    * server
+* [创建微服务实现](/micro/go-micro/go-micro_start.md)
+* [grpc 服务实现](/micro/go-micro/go-micro_services_grpc.md)
+* [服务注册与发现实现](/micro/go-micro/go-micro_registry.md)
+* [客户端grpc 实现](/micro/go-micro/go-micro_client_grpc.md)
+* [客户端服务发现与节点选择实现](/micro/go-micro/go-micro_client_registry.md)
+* [Go-Micro 客户端连接池实现](/micro/go-micro/go-micro_client_pool.md)
+* [事件订阅与消费实现](/micro/go-micro/go-micro_broker.md)
+* micro 工具实现
+  * profile
+  * scrpits
+  * server
 
 
 1. 创建服务实例

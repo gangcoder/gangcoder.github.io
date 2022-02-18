@@ -1,8 +1,8 @@
----
+<!-- ---
 title: minio notify
 date: 2018-11-16 12:51:28
 category: src, minio, src
----
+--- -->
 
 minio notify
 

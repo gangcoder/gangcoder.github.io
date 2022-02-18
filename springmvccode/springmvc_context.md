@@ -6,6 +6,9 @@ category: java100, springmvc, code
 
 # 初始化 WebApplicationContext
 
+![](draw/springmvc_context.svg)
+
+
 使用监听器加载 applicationContext 文件，在启动 web 容器时，自动装载 ApplicationContext 的配置信息。
 
 ## 1. ContextLoaderListener

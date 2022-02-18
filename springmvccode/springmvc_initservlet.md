@@ -6,6 +6,8 @@ category: java100, springmvc, code
 
 # DispatcherServlet 初始化
 
+![](draw/springmvc_initservlet.svg)
+
 DispatcherServlet 是 spring-mvc 的核心，该类进行真正逻辑实现。
 
 ## 1. 容器初始化

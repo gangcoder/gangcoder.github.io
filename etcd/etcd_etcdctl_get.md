@@ -1,8 +1,8 @@
----
+<!-- ---
 title: etcd etcdctl put & get
 date: 2019-08-04 04:35:53
 category: showcode, etcd
----
+--- -->
 
 # etcdctl get 子命令
 

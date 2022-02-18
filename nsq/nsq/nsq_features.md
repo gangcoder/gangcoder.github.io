@@ -1,8 +1,8 @@
----
+<!-- ---
 title: nsq features
 date: 2018-08-31 17:04:28
 category: language, go, nsq
----
+--- -->
 
 nsq features
 

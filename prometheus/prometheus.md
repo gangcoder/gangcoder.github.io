@@ -1,8 +1,8 @@
----
+<!-- ---
 title: prometheus
 date: 2018-11-17 06:20:48
 category: src, prometheus
----
+--- -->
 
 prometheus
 
@@ -13,9 +13,9 @@ prometheus
 
 ### 软件功能部分
 
-- [安装](./prometheus_install.md)
-- [查询](./prometheus_querying.md)
-- [术语](./prometheus_glossary.md)
+- [安装](/prometheus/prometheus_install.md)
+- [查询](/prometheus/prometheus_querying.md)
+- [术语](/prometheus/prometheus_glossary.md)
 
 中文文档
 

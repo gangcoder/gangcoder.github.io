@@ -6,6 +6,9 @@ category: java100, springbootcode
 
 # SpringBoot Code SpringApplication 初始化过程
 
+![](draw/springbootcode_springapplication.svg)
+
+
 构造 SpringApplication 实例，并运行它的run方法。
 
 ## 1. SpringApplication 类

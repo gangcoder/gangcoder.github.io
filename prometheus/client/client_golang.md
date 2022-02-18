@@ -13,17 +13,17 @@ client_golang
 代码基于 github.com/prometheus/client_golang  v1.4.1 版本。
 
 - 快速使用 Prometheus 指标
-- [指标收集逻辑](prometheus/client/http_handler.md) 详解应用中暴露 prometheus 抓取端点的处理过程，提供整体逻辑思路和处理流程
-- [注册与收集器](prometheus/client/registry.md) metric 注册和收集处理逻辑
-- [Metric 结构及实](prometheus/client/metric.md) 指标需要实现的功能，包括：指标数据功能，描述，收集功能，指标通用数据写入功能
-- [Desc 描描述](prometheus/client/desc.md) 描述指标属性
-- [Metric 注册与使用](prometheus/client/metric_register.md) Metric 指标的初始化，注册与数据收集细节详解
-- [Vec 指标](prometheus/client/vec.md) Vec 类指标的结构与处理逻辑
-- [Gauge 指标](prometheus/client/metric_gauge.md) gauge 指标的处理
-- [Summary 指标](prometheus/client/metric_summary.md) summary 指标的处理
-- [Histogram 指标](prometheus/client/metric_histogram.md) histogram 指标的处理
-- [Prometheus 服务API 封装](prometheus/client/api.md) api 提供请求Prometheus server 端接口的http 封装
-- [Push 实现封装](prometheus/client/push.md) push 提供推送 metrics 到 Pushgateway 的功能封装
+- [指标收集逻辑](/prometheus/client/http_handler.md) 详解应用中暴露 prometheus 抓取端点的处理过程，提供整体逻辑思路和处理流程
+- [注册与收集器](/prometheus/client/registry.md) metric 注册和收集处理逻辑
+- [Metric 结构及实](/prometheus/client/metric.md) 指标需要实现的功能，包括：指标数据功能，描述，收集功能，指标通用数据写入功能
+- [Desc 描描述](/prometheus/client/desc.md) 描述指标属性
+- [Metric 注册与使用](/prometheus/client/metric_register.md) Metric 指标的初始化，注册与数据收集细节详解
+- [Vec 指标](/prometheus/client/vec.md) Vec 类指标的结构与处理逻辑
+- [Gauge 指标](/prometheus/client/metric_gauge.md) gauge 指标的处理
+- [Summary 指标](/prometheus/client/metric_summary.md) summary 指标的处理
+- [Histogram 指标](/prometheus/client/metric_histogram.md) histogram 指标的处理
+- [Prometheus 服务API 封装](/prometheus/client/api.md) api 提供请求Prometheus server 端接口的http 封装
+- [Push 实现封装](/prometheus/client/push.md) push 提供推送 metrics 到 Pushgateway 的功能封装
 
 项目目录结构：
 

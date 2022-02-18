@@ -6,15 +6,18 @@ category: showcode, laravel
 
 # laravel 源码
 
-1. [HTTP 请求处理](showcode/laravel/laravel_http.md)
-2. [Request 类实现](showcode/laravel/laravel_request.md)
-3. [中间件实现](showcode/laravel/laravel_middleware.md)
-4. [路由实现](showcode/laravel/laravel_route.md)
-5. [Response 类实现](showcode/laravel/laravel_response.md)
-6. [异常处理](showcode/laravel/laravel_exception.md)
-7. [类和文件自动加载](showcode/laravel/laravel_load.md)
+
+* [HTTP 请求处理](/laravel/laravel_http.md)
+* [Request 类实现](/laravel/laravel_request.md)
+* [中间件实现](/laravel/laravel_middleware.md)
+* [路由实现](/laravel/laravel_route.md)
+* [Response 类实现](/laravel/laravel_response.md)
+* [异常处理](/laravel/laravel_exception.md)
+* [类和文件自动加载](/laravel/laravel_load.md)
+
 
 ## 参考资料
 
 https://xueyuanjun.com/post/9804
+
 https://www.cnblogs.com/cbywan/category/1822744.html

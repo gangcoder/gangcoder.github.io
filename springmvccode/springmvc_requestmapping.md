@@ -6,6 +6,8 @@ category: java100, springmvc, code
 
 # 路由处理器与适配器解析注册
 
+![](draw/springmvc_requestmapping.svg)
+
 Spring 容器创建最后，实例化所有 Bean，此时会初始化 RequestMappingHandler 和 RequestMappingHandlerAdapter。
 
 ## 1. 路由解析

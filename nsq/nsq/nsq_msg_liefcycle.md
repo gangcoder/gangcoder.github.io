@@ -1,8 +1,8 @@
----
+<!-- ---
 title: nsq msg
 date: 2018-08-30 10:47:40
 category: language, go, nsq
----
+--- -->
 
 nsq msg
 

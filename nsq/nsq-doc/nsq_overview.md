@@ -1,8 +1,8 @@
----
+<!-- ---
 title: nsq overview
 date: 2018-08-03 10:58:35
 category: language, go, nsq, doc
----
+--- -->
 
 nsq 概念
 

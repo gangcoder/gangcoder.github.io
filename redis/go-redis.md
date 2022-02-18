@@ -6,9 +6,8 @@ category: showcode, redis
 
 # go-redis
 
-* [go-redis 连接库](redis/go-redis.md)
-  * [Go-redis 连接](redis/go-redis_client.md)
-  * [Go-redis 命令](redis/go-redis_cmd.md)
+* [Go-redis 连接](/redis/go-redis_client.md)
+* [Go-redis 命令](/redis/go-redis_cmd.md)
 
 
 ## 参考资料

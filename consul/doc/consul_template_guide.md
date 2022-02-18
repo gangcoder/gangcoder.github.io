@@ -1,8 +1,8 @@
----
+<!-- ---
 title: consul template guide
 date: 2019-07-18 15:01:10
 category: src, consul, doc
----
+--- -->
 
 consul template guide
 

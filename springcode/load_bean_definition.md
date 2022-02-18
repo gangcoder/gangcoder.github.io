@@ -6,6 +6,8 @@ category: java100, springcode
 
 # Load Bean Definition
 
+![](draw/load_bean_definition.drawio.svg)
+
 ## 1. Bean 定义文件加载
 
 再创建完 BeanFactory 后，开始加载 Bean 定义。

@@ -1,8 +1,8 @@
----
+<!-- ---
 title: nsq install
 date: 2018-09-18 12:34:11
 category: language, go, nsq
----
+--- -->
 
 nsq install
 

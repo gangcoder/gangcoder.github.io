@@ -1,8 +1,8 @@
----
+<!-- ---
 title: nsq structure
 date: 2018-09-11 14:12:17
 category: language, go, nsq
----
+--- -->
 
 nsq 代码情况，包括目录结构
 

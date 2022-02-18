@@ -1,8 +1,8 @@
----
+<!-- ---
 title: go worker
 date: 2019-02-14 20:54:48
 category: language, go, advance
----
+--- -->
 
 go worker
 

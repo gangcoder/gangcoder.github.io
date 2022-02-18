@@ -1,8 +1,8 @@
----
+<!-- ---
 title: prometheus install
 date: 2018-11-17 06:52:04
 category: src, prometheus
----
+--- -->
 
 prometheus install
 

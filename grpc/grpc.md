@@ -6,13 +6,12 @@ category: showcode, grpc
 
 # Grpc
 
-* [Grpc 远程调用协议](grpc/grpc.md)
-  * [Grpc 服务端服务实现](grpc/grpc_server.md)
-  * [Grpc 服务端传输层实现](grpc/grpc_server_transport.md)
-  * [Grpc 客户端调用实现](grpc/grpc_client.md)
-  * [Grpc 客户端地址解析](grpc/grpc_client_resolver.md)
-  * [Grpc 客户端负载均衡](grpc/grpc_client_balancer.md)
-  * [Grpc 客户端传输层实现](grpc/grpc_client_transport.md)
+* [Grpc 服务端服务实现](/grpc/grpc_server.md)
+* [Grpc 服务端传输层实现](/grpc/grpc_server_transport.md)
+* [Grpc 客户端调用实现](/grpc/grpc_client.md)
+* [Grpc 客户端地址解析](/grpc/grpc_client_resolver.md)
+* [Grpc 客户端负载均衡](/grpc/grpc_client_balancer.md)
+* [Grpc 客户端传输层实现](/grpc/grpc_client_transport.md)
 
 ## 参考资料
 

@@ -6,6 +6,7 @@ category: java100, spring, springcode
 
 # Bean 属性注入
 
+![](draw/spring_bean_populate.drawio.svg)
 
 ## 1. 属性注入
 

@@ -8,11 +8,11 @@ category: java100, springbootcode
 
 ## 内容
 
-1. [环境搭建](springbootcode_start.md)
-2. [starter 依赖关系](springbootcode_starter_parent.md)
-3. [SpringApplication 初始化过程](springbootcode_springapplication.md)
-4. [@EnableAutoConfiguration 自动配置分析](springbootcode_autoconfiguration.md)
-5. [ServletWebServer 自动配置分析](springbootcode_servlet.md)
+1. [环境搭建](/springbootcode/springbootcode_start.md)
+2. [starter 依赖关系](/springbootcode/springbootcode_starter_parent.md)
+3. [SpringApplication 初始化过程](/springbootcode/springbootcode_springapplication.md)
+4. [@EnableAutoConfiguration 自动配置分析](/springbootcode/springbootcode_autoconfiguration.md)
+5. [ServletWebServer 自动配置分析](/springbootcode/springbootcode_servlet.md)
 
 ## 参考资料
 

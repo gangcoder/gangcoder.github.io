@@ -8,22 +8,21 @@ consul
 
 ## 内容目录
 
-* [Consul 服务发现](consul/consul.md)
-  * [Consul 使用指南](consul/doc/consul_guide.md)
-  * [Consul 安装与启动](consul/doc/consul_startup.md)
-  * [Consul 组件结构](consul/consul_structure.md)
-  * [Consul 代码结构](consul/consul_code.md)
-  * [Consul 入口函数](consul/consul_main.md)
-  * [Consul version 命令](consul/consul_version.md)
-  * [Consul KV 命令](consul/consul_command_kv.md)
-  * [Consul agent 启动](consul/consul_agent.md)
-  * [Consul agent client 模式](consul/consul_agent_client.md)
-  * [Consul agent server 模式](consul/consul_agent_server.md)
-  * [Consul 服务处理逻辑](consul/consul_server.md)
-  * [Consul 服务端KV 逻辑](consul/consul_server_kv.md)
-  * [Consul API 客户端](consul/consul_api.md)
-  * [Consul Http 服务](consul/consul_http.md)
-  * [Consul Http 服务KV 实现](consul/consul_http_kv.md)
+* [Consul 使用指南](/consul/doc/consul_guide.md)
+* [Consul 安装与启动](/consul/doc/consul_startup.md)
+* [Consul 组件结构](/consul/consul_structure.md)
+* [Consul 代码结构](/consul/consul_code.md)
+* [Consul 入口函数](/consul/consul_main.md)
+* [Consul version 命令](/consul/consul_version.md)
+* [Consul KV 命令](/consul/consul_command_kv.md)
+* [Consul agent 启动](/consul/consul_agent.md)
+* [Consul agent client 模式](/consul/consul_agent_client.md)
+* [Consul agent server 模式](/consul/consul_agent_server.md)
+* [Consul 服务处理逻辑](/consul/consul_server.md)
+* [Consul 服务端KV 逻辑](/consul/consul_server_kv.md)
+* [Consul API 客户端](/consul/consul_api.md)
+* [Consul Http 服务](/consul/consul_http.md)
+* [Consul Http 服务KV 实现](/consul/consul_http_kv.md)
 
 ## 参考资料
 

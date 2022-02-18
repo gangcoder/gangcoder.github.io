@@ -5,12 +5,12 @@ Spring MVC 版本: `spring-framework v5.2.15.RELEASE`
 
 ## 内容
 
-- [开发环境搭建](springmvc_start.md)
-- [初始化 WebApplicationContext](springmvc_context.md)
-- [DispatcherServlet 初始化](springmvc_initservlet.md)
-- [Spring MVC 标签解析](springmvc_mvcnamespacehandler.md)
-- [路由处理器与适配器解析注册](springmvc_requestmapping.md)
-- [DispatcherServlet 的逻辑处理](springmvc_dodispatch.md)
+- [开发环境搭建](/springmvccode/springmvc_start.md)
+- [初始化 WebApplicationContext](/springmvccode/springmvc_context.md)
+- [DispatcherServlet 初始化](/springmvccode/springmvc_initservlet.md)
+- [Spring MVC 标签解析](/springmvccode/springmvc_mvcnamespacehandler.md)
+- [路由处理器与适配器解析注册](/springmvccode/springmvc_requestmapping.md)
+- [DispatcherServlet 的逻辑处理](/springmvccode/springmvc_dodispatch.md)
 
 
 ## 源码解析参考

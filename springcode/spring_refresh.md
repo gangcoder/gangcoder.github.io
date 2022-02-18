@@ -6,6 +6,8 @@ category: java100, springcode
 
 # Spring refresh 方法解析
 
+![](draw/spring_refresh.drawio.svg)
+
 ## 1.  prepareBeanFactory
 
 BeanFactory 设置。

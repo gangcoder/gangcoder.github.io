@@ -1,8 +1,8 @@
----
+<!-- ---
 title: minio xl
 date: 2018-11-13 11:36:34
 category: src, minio, src
----
+--- -->
 
 minio xl
 

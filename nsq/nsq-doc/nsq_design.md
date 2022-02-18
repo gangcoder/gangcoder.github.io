@@ -1,8 +1,8 @@
----
+<!-- ---
 title: nsq 设计
 date: 2018-08-30 10:48:59
 category: language, go, nsq, doc
----
+--- -->
 
 ## nsq 设计
 

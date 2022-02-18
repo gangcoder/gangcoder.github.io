@@ -6,6 +6,8 @@ category: java100, springcode
 
 # Bean 实例化过程
 
+![](draw/spring_bean_init.drawio.svg)
+
 ## 示例代码
 
 ```java

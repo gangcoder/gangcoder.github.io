@@ -6,6 +6,8 @@ category: java100, spring, springcode
 
 # 包扫描标签component-scan 解析
 
+![](draw/spring_component_scan.svg)
+
 ## 1. 注册解析器
 
 解析到自定义标签时，根据namespace 找到对应处理器，并且初始化，初始化时注册具体标签解析器。

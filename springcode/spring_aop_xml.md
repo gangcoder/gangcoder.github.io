@@ -6,6 +6,8 @@ category: java100, springcode
 
 # Spring AOP 基于XML 启用原理
 
+![](draw/spring_aop_xml.drawio.svg)
+
 ## 示例代码准备
 
 ```java

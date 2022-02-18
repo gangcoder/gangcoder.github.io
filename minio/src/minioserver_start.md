@@ -1,8 +1,8 @@
----
+<!-- ---
 title: minio server start
 date: 2018-10-22 14:46:34
 category: database, storage, minio
----
+--- -->
 
 minio server start
 

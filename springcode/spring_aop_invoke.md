@@ -6,6 +6,9 @@ category: java100, springcode
 
 # Spring AOP 代理实例化与调用
 
+![](draw/spring_aop_invoke.svg)
+
+
 `AspectJAwareAdvisorAutoProxyCreator` 是Spring AOP的核心类，这个类实现了 `类/接口-->代理` 的转换过程。
 
 AOP 代理实例化与调用逻辑：

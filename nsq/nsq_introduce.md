@@ -1,8 +1,8 @@
----
+<!-- ---
 title: nsq 简介
 date: 2018-09-17 21:08:58
 category: language, go, nsq
----
+--- -->
 
 nsq 简介，模块结构和消息投递模型
 

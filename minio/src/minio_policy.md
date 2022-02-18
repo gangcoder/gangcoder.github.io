@@ -1,8 +1,8 @@
----
+<!-- ---
 title: minio policy
 date: 2018-11-15 14:00:47
 category: src, minio, src
----
+--- -->
 
 minio policy
 
